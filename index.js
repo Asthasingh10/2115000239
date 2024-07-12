@@ -117,3 +117,5 @@ async function handleRequest(numbers, type, res) {
 app.listen(port, () => {
     console.log(`Listening on port http://localhost:${port}`);
 });
+
+// run this file using npx nodemon index.js
