@@ -49,6 +49,10 @@ function generateRandomNumbers(min, max, count) {
     return randomNumbers;
 }
 
+app.get("/numbers",(req,res)=>{
+    res.render("index.ejs")
+})
+
 app.get("/numbers/even", async (req, res) => {
     const evenNumbers = Array.from({ length: WINDOW_SIZE }, (_, i) => (i + 1) * 2);
     handleRequest(evenNumbers, "Even", res);
@@ -115,7 +119,7 @@ async function handleRequest(numbers, type, res) {
 }
 
 app.listen(port, () => {
-    console.log(`Listening on port http://localhost:${port}`);
+    console.log(`Listening on port http://localhost:${port}/numbers`);
 });
 
 // run this file using npx nodemon index.js
